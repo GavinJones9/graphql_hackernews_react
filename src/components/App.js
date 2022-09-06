@@ -4,7 +4,7 @@ import CreateLink from './CreateLink';
 import Header from './Header';
 import Login from './Login';
 import { Route, Routes } from 'react-router-dom';
-
+import Search from './Search';
 class App extends Component {
   render() {
     return <div className="center w85">
@@ -17,7 +17,8 @@ class App extends Component {
             element={<CreateLink />}
           />
           <Route path="/login" element={<Login />} />
-        </Routes>
+          <Route path="/search"element={<Search/>}/>
+ </Routes>
       </div>
     </div>;
   }

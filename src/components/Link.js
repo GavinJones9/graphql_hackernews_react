@@ -8,7 +8,23 @@ import { FEED_QUERY } from './LinkList';
 const VOTE_MUTATION = gql`
   mutation VoteMutation($linkId: ID!) {
     vote(linkId: $linkId) {
-      id     
+      id
+      link {        
+        id
+        createdAt
+        url
+        description
+        postedBy {
+          id
+          name
+        }
+        votes {
+          id
+          user {
+            id
+          }
+        }
+      }
       user {
         id
       }
@@ -46,7 +62,6 @@ const Link = (props) => {
       });
     }
   });
-  console.log('link', link);
   const authToken = localStorage.getItem(AUTH_TOKEN);
   return (
     <div className="flex mt2 items-start">
