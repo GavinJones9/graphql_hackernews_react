@@ -5,7 +5,7 @@ import { AUTH_TOKEN } from '../constants';
 const Header = () => {
     const navigate = useNavigate();
     const authToken = localStorage.getItem(AUTH_TOKEN);
-    console.log('authToken',authToken);
+    console.log('authToken', authToken);
     return (
         <div className="flex pa1 justify-between nowrap orange">
             <div className="flex flex-fixed black">
@@ -14,6 +14,10 @@ const Header = () => {
                 </Link>
                 <Link to="/" className="ml1 no-underline black">
                     new
+                </Link>
+                <div className="ml1">|</div>
+                <Link to="/top" className="ml1 no-underline black">
+                    top
                 </Link>
                 <div className="ml1">|</div>
                 <Link
